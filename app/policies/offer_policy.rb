@@ -9,4 +9,7 @@ class OfferPolicy < ApplicationPolicy
     return true
   end
     
+  def new?
+    true
+  end
 end
