@@ -1,3 +1,17 @@
 <div class="container">
   <h1>Services</h1>
+  <div class="row">
+    <% @offers.each do |offer| %>
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title"><%= offer.name.capitalise %></h5>
+            <p class="card-text"><%= offer.detail %></p>
+            <p class="card-text"><%= offer.price %></p>
+            <%= link_to 'Book now', booking_path(offer), class: "btn btn-primary" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
