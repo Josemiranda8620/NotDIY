@@ -7,13 +7,7 @@
         <h5 class="card-title">DETAILS</h5>
         <p class="card-text"><%= @offer.detail %></p>
         <p class="card-text">Price: <%= @offer.price %> Yen </p>
-        <%= form_for(@booking) do |f| %>
-            <%= f.label :date %>
-            <%= f.text_field :date %>
-            <%= f.label :reason %>
-            <%= f.text_field :reason %>
-            <%= f.submit %>
-        <% end %>
+        <%= render "bookings/form" %>
     </div>
 </div>
 
