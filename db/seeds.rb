@@ -6,7 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Offer.create(name: "Break up relationships", detail: "I can help you avoid that difficult situation with that person you don't want to see anymore", price: 10000)
+
+
+
+Offer.create!(name: "Break up relationships", detail: "I can help you avoid that difficult situation with that person you don't want to see anymore", price: 10000, user_id: 1)
 Offer.create(name: "Fire an employee", detail: "Quick and painless firing service on demand", price: 15000)
 Offer.create(name: "Deliver a citation", detail: "If you don't want to deal with possible violent situations", price: 15000)
 Offer.create(name: "Deal with your noisy neighboor", detail: "A confrontation that your neighboor will never forget", price: 20000)
