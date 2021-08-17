@@ -3,3 +3,33 @@
 @import "avatar";
 @import "footer";
 @import "navbar";
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=Noto+Serif:wght@400;700&display=swap');
+
+h1 {
+ font-family: 'DM Serif Text', serif;
+ font-size: 56px;
+}
+body {
+  font-family: 'Noto Serif', serif;
+}
+.centered {
+  text-align: center;
+}
+
+.dimensions {
+  height: 200px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.movable {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.price {
+  position: absolute;
+  bottom: 10px;
+  left: 30px;
+}
