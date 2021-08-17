@@ -1,15 +1,18 @@
-
-<div class="card ml-4 mr-4 mt-4">
-    <div class="card-header">
-        <%= @offer.name %>
+<div class="container justify-content-center">
+<div class="row justify-content-center">
+    <div class="col col-6 mt-5 mb-5">
+        <div class="card mt-4">
+            <div class="card-header" style="background-color: #e3cdb0">
+                <h2><%= @offer.name %></h2>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title mt-4 mb-4"><strong>DETAILS</strong></h5>
+                <p class="card-text"><%= @offer.detail %></p>
+                <p class="card-text mb-4">Price: <%= @offer.price %> Yen </p>
+                <%= render "bookings/form" %>
+            </div>
+        </div>    
     </div>
-    <div class="card-body">
-        <h5 class="card-title">DETAILS</h5>
-        <p class="card-text"><%= @offer.detail %></p>
-        <p class="card-text">Price: <%= @offer.price %> Yen </p>
-        <%= render "bookings/form" %>
-    </div>
+  </div>
 </div>
-
-
 
