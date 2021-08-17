@@ -7,6 +7,8 @@ class OffersController < ApplicationController
 
   def show
     @offer = Offer.find(params[:id])
+    @booking = Booking.new
+    authorize @offer
   end
 
   def new
@@ -25,6 +27,6 @@ class OffersController < ApplicationController
   private
 
   def secure_params
-    params.require(:offer).permit(:name, :details, :price, :user_id)
+    params.require(:offer).permit(:name, :detail, :price, :user_id)
   end
 end
