@@ -3,6 +3,7 @@
 @import "avatar";
 @import "footer";
 @import "navbar";
+@import "tabs";
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=Noto+Serif:wght@400;700&display=swap');
 
 h1 {
@@ -20,6 +21,17 @@ body {
   height: 200px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   position: relative;
+
+  h4 {
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-color: #b98d56;
+    font-size: 32px;
+  }
+  p {
+    color:grey;
+  }
+
 }
 
 .movable {
