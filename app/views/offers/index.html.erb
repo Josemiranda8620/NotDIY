@@ -6,6 +6,11 @@
         <div class="card my-3 pt-2 pb-1 dimensions">
           <div class="card-body">
             <h4 class="card-title"><%= offer.name.capitalize %></h4>
+          <% if offer.user.photo.attached? %>
+            <%= cl_image_tag offer.user.photo.key, class: "avatar" %>
+          <% else %>
+            <i class="far fa-user"></i>
+          <% end %>
             <p class="card-text"><%= offer.detail %></p>
             <%# <div class=""> %>
             <h5 class="card-text price"><%= offer.price %>¥</h5>
