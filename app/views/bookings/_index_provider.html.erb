@@ -1,17 +1,21 @@
 <div class="container">
-  <h1 class="centered my-3 p-2">My Booked Services</h1>
-  <div class="row">
-    <% @bookings.each do |booking| %>
-      <div class="col-sm-6">
-        <div class="card my-3 pt-2 pb-1 dimensions">
-          <div class="card-body">
-            <h5 class="card-title"><%= booking.offer.name %></h5>
-            <p class="card-text">Booked for: <%= booking.date %></p>
-            <p class="card-text"><%= booking.offer.price %> ¥</p>
-            <h6>Status: <%= booking.status %></h6>
+  <% unless @bookings_as_owner.nil? %>
+      <h1 class="centered my-3 p-2">My Booked Services</h1>
+      <div class="row">
+        <% @bookings.each do |booking| %>
+          <div class="col-sm-6">
+            <div class="card my-3 pt-2 pb-1 dimensions">
+              <div class="card-body">
+                <h5 class="card-title"><%= booking.offer.name %></h5>
+                <p class="card-text">Booked for: <%= booking.date %></p>
+                <p class="card-text"><%= booking.offer.price %> ¥</p>
+                <h6>Status: <%= booking.status %></h6>
+              </div>
+            </div>
           </div>
-        </div>
+        <% end %>
       </div>
-    <% end %>
-  </div>
+  <% else %>
+    <h2 class="centered my-3 p-2 mb-4">You have no services booked</h2>  
+  <% end %>         
 </div>
