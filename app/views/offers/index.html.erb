@@ -6,11 +6,11 @@
         <div class="card pt-2 pb-1 dimensions" style= "background-image: url(<%= asset_path("dynamic-style.png")%>);">
           <div class="card-body">
             <h4 class="card-title"><%= offer.name.capitalize %></h4>
-            <% if offer.user.photo.attached? %>
-              <%= cl_image_tag offer.user.photo.key, class: "avatar" %>
-            <% else %>
-              <i class="far fa-user"></i>
-            <% end %>
+          <% if offer.user.photo.attached? %>
+            <%= cl_image_tag offer.user.photo.key, class: "avatar offer-avatar" %>
+          <% else %>
+            <i class="far fa-user offer-avatar"></i>
+          <% end %>
             <p class="card-text"><%= offer.detail %></p>
             <%# <div class=""> %>
             <h5 class="card-text price"><%= offer.price %>¥</h5>
