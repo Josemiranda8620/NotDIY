@@ -7,7 +7,7 @@
           <div class="card-body">
             <h5 class="card-title"><%= booking.offer.name %></h5>
             <p class="card-text"><%= booking.date %></p>
-            <p class="card-text"><%= booking.offer.details %></p>
+            <p class="card-text"><%= booking.offer.detail %></p>
             <p class="card-text"><%= booking.offer.price %></p>
             <p class="card-text price"><%= booking.status %></p>
           </div>
@@ -22,7 +22,7 @@
         <div class="card-body">
           <h5 class="card-title"><%= offer.name.capitalize %></h5>
           <p class="card-text"><%= offer.detail %></p>
-          <p class="card-text">Has been booked<%= offer.bookings.count %>times</p>
+          <p class="card-text">Has been booked <%= offer.bookings.count %> times</p>
           <p class="card-text price"><%= offer.price %>Yens</p>
         </div>
       </div>
