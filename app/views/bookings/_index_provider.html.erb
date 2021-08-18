@@ -6,10 +6,9 @@
         <div class="card my-3 pt-2 pb-1 dimensions">
           <div class="card-body">
             <h5 class="card-title"><%= booking.offer.name %></h5>
-            <p class="card-text"><%= booking.date %></p>
-            <p class="card-text"><%= booking.offer.detail %></p>
-            <p class="card-text"><%= booking.offer.price %></p>
-            <p class="card-text price"><%= booking.status %></p>
+            <p class="card-text">Booked for: <%= booking.date %></p>
+            <p class="card-text"><%= booking.offer.price %> ¥</p>
+            <h6>Status: <%= booking.status %></h6>
           </div>
         </div>
       </div>

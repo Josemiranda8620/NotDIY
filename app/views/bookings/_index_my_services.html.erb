@@ -1,14 +1,17 @@
+
 <div class="container">
-  <h1 class="centered my-3 p-2">My services</h1>
+  <h1 class="centered mt-3">Services</h1>
   <div class="row">
     <% @offers.each do |offer| %>
       <div class="col-sm-6">
-        <div class="card my-3 pt-2 pb-1 dimensions">
+        <div class="card pt-2 pb-1 dimensions">
           <div class="card-body">
-            <h5 class="card-title"><%= offer.name.capitalize %></h5>
+            <h4 class="card-title"><%= offer.name.capitalize %></h4>
             <p class="card-text"><%= offer.detail %></p>
             <p class="card-text">Has been booked <%= offer.bookings.count %> times</p>
-            <p class="card-text price"><%= offer.price %> ¥</p>
+            <%# <div class=""> %>
+            <h5 class="card-text price"><%= offer.price %>¥</h5>
+            <%# </div> %>
           </div>
         </div>
       </div>
