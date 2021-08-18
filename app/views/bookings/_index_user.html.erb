@@ -1,18 +1,21 @@
 <div class="container">
-  <h1 class="centered my-3 p-2">My Booked Services</h1>
+  <h1 class="centered my-3 p-2">My bookings</h1>
   <div class="row">
     <% @bookings.each do |booking| %>
       <div class="col-sm-6">
         <div class="card my-3 pt-2 pb-1 dimensions">
           <div class="card-body">
             <h5 class="card-title"><%= booking.offer.name %></h5>
-            <p class="card-text"><%= booking.date %></p>
+            <p class="card-text">Date: <%= booking.date %></p>
             <p class="card-text"><%= booking.offer.detail %></p>
-            <p class="card-text"><%= booking.offer.price %></p>
-            <p class="card-text price"><%= booking.status %></p>
+            <%# <div class=""> %>
+              <h6>Status: <%= booking.status %></h6>
+              <h5><%= booking.offer.price %> ¥</h5>
+            <%# </div> %>
           </div>
         </div>
       </div>
     <% end %>
   </div>
 </div>
+
