@@ -18,6 +18,7 @@ class OffersController < ApplicationController
 
   def create
     @offer = Offer.new(secure_params)
+    authorize @offer
     if @offer.save
       redirect_to offer_path(@offer)
     else

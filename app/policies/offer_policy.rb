@@ -8,8 +8,9 @@ class OfferPolicy < ApplicationPolicy
   def show?
     return true
   end
-    
-  def new?
+
+  def update?
     true
   end
+
 end
