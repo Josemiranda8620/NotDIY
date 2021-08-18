@@ -4,21 +4,21 @@
       <a class="active tab-underlined" id="home-tab" data-toggle="tab" href="#bookings" role="tab" aria-controls="home" aria-selected="true">Bookings</a>
     </li>
     <li class="nav-item" role="presentation">
-      <a class="tab-underlined" id="profile-tab" data-toggle="tab" href="#requests" role="tab" aria-controls="profile" aria-selected="false">Requests</a>
+      <a class="tab-underlined" id="profile-tab" data-toggle="tab" href="#services" role="tab" aria-controls="profile" aria-selected="false">Services</a>
     </li>
     <li class="nav-item" role="presentation">
-      <a class="tab-underlined" id="converstion-tab" data-toggle="tab" href="#converstions" role="tab" aria-controls="converstion" aria-selected="false">Conversations</a>
+      <a class="tab-underlined" id="converstion-tab" data-toggle="tab" href="#My_booked_services" role="tab" aria-controls="converstion" aria-selected="false">My booked services</a>
     </li>
   </ul>
   <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade py-3 show active" id="bookings" role="tabpanel" aria-labelledby="home-tab">
-      This is the content for the Bookings tab. Notice in the tab HTML there is a href="#bookings". This is pointing to the id of this div.
+      <%= render "bookings/index_user" %>
     </div>
-    <div class="tab-pane fade py-3" id="requests" role="tabpanel" aria-labelledby="profile-tab">
-      This is the content for the Requests tab. Notice in the tab HTML there is a href="#requests". This is pointing to the id of this div.
+    <div class="tab-pane fade py-3" id="services" role="tabpanel" aria-labelledby="profile-tab">
+      <%= render "bookings/index_my_services" %>
     </div>
-    <div class="tab-pane fade py-3" id="converstions" role="tabpanel" aria-labelledby="converstion-tab">
-      This is the content for the Conversations tab. Notice in the tab HTML there is a href="#converstations". This is pointing to the id of this div.
+    <div class="tab-pane fade py-3" id="My_booked_services" role="tabpanel" aria-labelledby="converstion-tab">
+    <%= render "bookings/index_my_services" %>
     </div>
   </div>
 </div>
