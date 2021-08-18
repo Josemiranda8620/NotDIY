@@ -1,2 +1,6 @@
 // Import page-specific CSS files here.
 @import "home";
+
+body {
+  background: linear-gradient(135deg, rgba(185, 141, 86, 0.4), rgba(112, 86, 53, 0.4));
+}
