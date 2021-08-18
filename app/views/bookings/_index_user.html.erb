@@ -8,14 +8,13 @@
             <h5 class="card-title"><%= booking.offer.name %></h5>
             <p class="card-text">Date: <%= booking.date %></p>
             <p class="card-text"><%= booking.offer.detail %></p>
-            <%# <div class=""> %>
+            <div class="d-flex justify-content-between">
+              <p class="card-text"><%= booking.offer.price %> ¥</p>
               <h6>Status: <%= booking.status %></h6>
-              <h5><%= booking.offer.price %> ¥</h5>
-            <%# </div> %>
+            </div>  
           </div>
         </div>
       </div>
     <% end %>
   </div>
 </div>
-
