@@ -1,25 +1,24 @@
-
 <div class="container">
   <% if @bookings.count > 0 %>
     <h1 class="centered my-3 p-2">My Bookings</h1>
     <div class="row">
       <% @bookings.each do |booking| %>
         <div class="col-sm-6">
-          <div class="card my-3 pt-2 pb-1 dimensions">
+          <div class="card my-3 pt-2 pb-1 no-effect-card" style= "background-image: url(<%= asset_path("dynamic-style.png")%>);">
             <div class="card-body">
-              <h5 class="card-title"><%= booking.offer.name %></h5>
+              <h4 class="card-title"><%= booking.offer.name.capitalize %></h4>
               <p class="card-text">Date: <%= booking.date %></p>
               <p class="card-text"><%= booking.offer.detail %></p>
               <div class="d-flex justify-content-between">
                 <p class="card-text"><%= booking.offer.price %> ¥</p>
-                <h6>Status: <%= booking.status %></h6>
-              </div>  
+                <h5>Status: <%= booking.status %></h5>
+              </div>
             </div>
           </div>
         </div>
       <% end %>
     </div>
   <% else %>
-     <h2 class="centered my-3 p-2 mb-4">There are no bookings</h2>  
-  <% end %>   
+    <h2 class="centered my-3 p-2 mb-4">There are no bookings</h2>
+  <% end %>
 </div>

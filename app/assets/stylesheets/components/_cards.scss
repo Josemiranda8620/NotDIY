@@ -1,0 +1,43 @@
+.no-effect-card {
+  height: 200px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  position: relative;
+  margin: 10px;
+  line-height: normal;
+
+  h4 {
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-color: #b98d56;
+    font-size: 32px;
+  }
+  p {
+    color:rgb(82, 82, 82);
+  }
+
+}
+
+
+.effect-card {
+  height: 200px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  position: relative;
+  margin: 10px;
+
+
+  &:hover {
+    margin: -1px;
+    transition: 0.5s;
+  }
+
+  h4 {
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-color: #b98d56;
+    font-size: 32px;
+  }
+  p {
+    color:grey;
+  }
+
+}

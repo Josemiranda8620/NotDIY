@@ -4,6 +4,7 @@
 @import "footer";
 @import "navbar";
 @import "tabs";
+@import "cards";
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=Noto+Serif:wght@400;700&display=swap');
 
 h1 {
@@ -15,30 +16,6 @@ body {
 }
 .centered {
   text-align: center;
-}
-
-.dimensions {
-  height: 200px;
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-  position: relative;
-  margin: 10px;
-
-
-  &:hover {
-    margin: -1px;
-    transition: 0.5s;
-  }
-
-  h4 {
-    font-weight: bold;
-    text-decoration: underline;
-    text-decoration-color: #b98d56;
-    font-size: 32px;
-  }
-  p {
-    color:grey;
-  }
-
 }
 
 .movable {
@@ -53,13 +30,13 @@ body {
   left: 30px;
 }
 
-.dimensions-booking {
+.effect-card-booking {
   height: 300px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   position: relative;
 }
 
-.dimensions .offer-avatar {
+.effect-card  .offer-avatar {
   position: absolute;
   top: 5px;
   right: 5px;
