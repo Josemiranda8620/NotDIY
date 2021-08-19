@@ -33,7 +33,10 @@
         <a class="nav-link" href=bookings>
           <i class="fa fa-bell">
             <% if current_user.bookings_as_owner.count > 0 %> 
-            <span class="badge badge-danger"><%= current_user.bookings_as_owner.count%></span>
+            <%pending = current_user.bookings_as_owner.select do |booking| %>
+              <% booking.status == "pending" %>
+            <% end %>  
+            <span class="badge badge-danger"><%= pending.count %></span>
             <% end %>
           </i>
         </a>
