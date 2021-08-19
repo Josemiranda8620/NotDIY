@@ -9,6 +9,9 @@
     <li class="nav-item" role="presentation">
       <a class="tab-underlined <%= "active" if params[:tab] ==  "My_booked_services" %>" id="converstion-tab" data-toggle="tab" href="#My_booked_services" role="tab" aria-controls="converstion" aria-selected="false">Upcoming bookings</a>
     </li>
+    <li class="nav-item" role="presentation">
+      <a class="tab-underlined <%= "active" if params[:tab] ==  "completed" %>" id="converstion-tab" data-toggle="tab" href="#My_booked_services" role="tab" aria-controls="converstion" aria-selected="false">Passed bookings</a>
+    </li>
   </ul>
   <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade py-3 <%= "show active" if params[:tab].nil? || params[:tab] ==  "bookings" %>" id="bookings" role="tabpanel" aria-labelledby="home-tab">
@@ -19,6 +22,9 @@
     </div>
     <div class="tab-pane fade py-3 <%= "show active" if params[:tab] ==  "My_booked_services" %>" id="My_booked_services" role="tabpanel" aria-labelledby="converstion-tab">
       <%= render "bookings/index_provider" %>
+    </div>
+    <div class="tab-pane fade py-3 <%= "show active" if params[:tab] ==  "completed" %>" id="completed" role="tabpanel" aria-labelledby="converstion-tab">
+      <%= render "bookings/index_completed" %>
     </div>
   </div>
 </div>

@@ -24,7 +24,7 @@ class OffersController < ApplicationController
     @offer.user = current_user
     authorize @offer
     if @offer.save
-      redirect_to offer_path(@offer)
+      redirect_to bookings_path(tab: "services")
     else
       render :new
     end
