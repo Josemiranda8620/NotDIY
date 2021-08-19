@@ -14,7 +14,7 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to bookings_path
     else
-      render offer_path(@offer)
+      render index
     end
   end
 
