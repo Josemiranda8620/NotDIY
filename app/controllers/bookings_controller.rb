@@ -1,7 +1,6 @@
 class BookingsController < ApplicationController
 
   def index
-    @tab = params[:tab]
     @bookings = policy_scope(Booking)
     @offers = policy_scope(Offer).where(user: current_user)
   end
@@ -23,7 +22,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     authorize @booking
     if @booking.update(secure_params)
-      redirect_to bookings_path(params[:tab] = "My_booked_services")
+      redirect_to bookings_path(tab: "My_booked_services")
     else
       render new_offer_path
     end
