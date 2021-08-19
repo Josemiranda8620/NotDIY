@@ -2,10 +2,14 @@ class BookingPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.where(user: user)
-    end 
+    end
   end
 
   def create?
     true
-  end  
+  end
+
+  def update?
+    true
+  end
 end

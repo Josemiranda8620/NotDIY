@@ -7,8 +7,23 @@
           <div class="card-body">
             <h5 class="card-title"><%= booking.offer.name %></h5>
             <p class="card-text">Booked for: <%= booking.date %></p>
-            <p class="card-text"><%= booking.offer.price %> ¥</p>
-            <h6>Status: <%= booking.status %></h6>
+            <div class="d-flex justify-content-between">
+              <p class="card-text"><%= booking.offer.price %> ¥</p>
+              <% if booking.pending? %>
+                <div class="d-flex">
+                  <%= simple_form_for booking do |f| %>
+                    <%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
+                    <%= f.submit 'Accept', class: 'btn btn-info' %>
+                  <% end %>
+                  <%= simple_form_for booking do |f| %>
+                    <%= f.input :status, as: :hidden, input_html: { value: 'rejected'} %>
+                    <%= f.submit 'Reject', class: 'btn btn-info' %>
+                  <% end %>
+                </div>
+              <% else %>
+                <p class='booking-tag'><%= booking.status %></p>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>

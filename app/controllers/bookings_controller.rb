@@ -20,8 +20,9 @@ class BookingsController < ApplicationController
 
   def update
     @booking = Booking.find(params[:id])
+    authorize @booking
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to bookings_path
     else
       render new_offer_path
     end
@@ -36,6 +37,6 @@ class BookingsController < ApplicationController
   private
 
   def secure_params
-    params.require(:booking).permit(:date, :reason, :user_id, :offer_id)
+    params.require(:booking).permit(:date, :reason, :user_id, :offer_id, :status, :start_time, :end_time)
   end
 end
