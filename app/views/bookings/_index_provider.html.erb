@@ -1,4 +1,6 @@
+
 <div class="container">
+<% if current_user.bookings_as_owner.count > 0 %>
   <h1 class="centered my-3 p-2">My Booked Services</h1>
   <div class="row">
     <% @bookings.each do |booking| %>
@@ -29,4 +31,7 @@
       </div>
     <% end %>
   </div>
+<% else %>
+  <h2 class="centered my-3 p-2 mb-4">You have no services booked</h2> 
+<% end %>  
 </div>
