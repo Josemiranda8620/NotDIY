@@ -1,8 +1,11 @@
 class OffersController < ApplicationController
-
   def index
-    @offers = policy_scope(Offer)
-
+    @offers =
+      if params[:query].blank?
+        policy_scope(Offer)
+      else
+        policy_scope(Offer).search_by_name_and_detail(params[:query])
+      end
   end
 
   def show
@@ -23,7 +26,6 @@ class OffersController < ApplicationController
     if @offer.save
       redirect_to offer_path(@offer)
     else
-      raise
       render :new
     end
   end
@@ -34,4 +36,3 @@ class OffersController < ApplicationController
     params.require(:offer).permit(:name, :detail, :price, :user_id)
   end
 end
-
