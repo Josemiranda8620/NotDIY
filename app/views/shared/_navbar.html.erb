@@ -25,12 +25,9 @@
     <% else %>
       <p>Hi, Friend!</p>
     <% end %>
-
-
-
     <ul class="navbar-nav ">
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <%= link_to bookings_path(tab: "My_booked_services"), class: "nav-link" do%>
           <i class="fa fa-bell">
             <% if current_user.bookings_as_owner.count > 0 %> 
             <%pending = current_user.bookings_as_owner.select do |booking| %>
@@ -39,12 +36,9 @@
             <span class="badge badge-danger"><%= pending.count %></span>
             <% end %>
           </i>
-        </a>
+        <% end %>
       </li>
     </ul>
-
-
-
     <span class="nav-item dropdown">
       <%# <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
       <p class="dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-bars"></i></p>
