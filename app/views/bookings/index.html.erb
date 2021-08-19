@@ -1,13 +1,16 @@
 <div class="container">
   <ul class="nav tabs-underlined" id="myTab" role="tablist">
     <li class="nav-item" role="presentation">
-      <a class="tab-underlined <%= "active" if params[:tab].nil? || params[:tab] ==  "bookings" %>" id="home-tab" data-toggle="tab" href="#bookings" role="tab" aria-controls="home" aria-selected="true">Bookings</a>
+      <a class="tab-underlined <%= "active" if params[:tab].nil? || params[:tab] ==  "bookings" %>" id="home-tab" data-toggle="tab" href="#bookings" role="tab" aria-controls="home" aria-selected="true">My bookings</a>
     </li>
     <li class="nav-item" role="presentation">
-      <a class="tab-underlined <%= "active" if params[:tab] ==  "services" %>" id="profile-tab" data-toggle="tab" href="#services" role="tab" aria-controls="profile" aria-selected="false">Services</a>
+      <a class="tab-underlined <%= "active" if params[:tab] ==  "services" %>" id="profile-tab" data-toggle="tab" href="#services" role="tab" aria-controls="profile" aria-selected="false">The services I offer</a>
     </li>
     <li class="nav-item" role="presentation">
-      <a class="tab-underlined <%= "active" if params[:tab] ==  "My_booked_services" %>" id="converstion-tab" data-toggle="tab" href="#My_booked_services" role="tab" aria-controls="converstion" aria-selected="false">Upcoming bookings</a>
+      <a class="tab-underlined <%= "active" if params[:tab] ==  "My_booked_services" %>" id="converstion-tab" data-toggle="tab" href="#My_booked_services" role="tab" aria-controls="converstion" aria-selected="false">Upcoming services</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="tab-underlined <%= "active" if params[:tab] ==  "completed" %>" id="converstion-tab" data-toggle="tab" href="#My_booked_services" role="tab" aria-controls="converstion" aria-selected="false">Passed services</a>
     </li>
   </ul>
   <div class="tab-content" id="myTabContent">
@@ -19,6 +22,9 @@
     </div>
     <div class="tab-pane fade py-3 <%= "show active" if params[:tab] ==  "My_booked_services" %>" id="My_booked_services" role="tabpanel" aria-labelledby="converstion-tab">
       <%= render "bookings/index_provider" %>
+    </div>
+    <div class="tab-pane fade py-3 <%= "show active" if params[:tab] ==  "completed" %>" id="completed" role="tabpanel" aria-labelledby="converstion-tab">
+      <%= render "bookings/index_completed" %>
     </div>
   </div>
 </div>

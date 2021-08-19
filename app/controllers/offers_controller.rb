@@ -11,6 +11,7 @@ class OffersController < ApplicationController
   def show
     @offer = Offer.find(params[:id])
     @booking = Booking.new
+    @previous_booking = @offer.bookings.find_by(user: current_user)
     authorize @offer
   end
 

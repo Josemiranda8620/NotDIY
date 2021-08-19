@@ -3,31 +3,33 @@
     <h1 class="centered my-3 p-2">Upcoming bookings</h1>
     <div class="row">
       <% @bookings.each do |booking| %>
-        <div class="col-sm-6">
-          <div class="card my-3 pt-2 pb-1 no-effect-card" style= "background-image: url(<%= asset_path("dynamic-style.png")%>);">
-            <div class="card-body">
-              <h4 class="card-title"><%= booking.offer.name.capitalize %></h4>
-              <p class="card-text">Booked for: <%= booking.date %></p>
-              <div class="d-flex justify-content-between">
-                <p class="card-text"><%= booking.offer.price %> ¥</p>
-                <% if booking.pending? %>
-                  <div class="d-flex">
-                    <%= simple_form_for booking do |f| %>
-                      <%= f.input :status, as: :hidden, input_html: { value: 'confirmed'} %>
-                      <%= f.submit 'Accept', class: 'btn btn-info' %>
-                    <% end %>
-                    <%= simple_form_for booking do |f| %>
-                      <%= f.input :status, as: :hidden, input_html: { value: 'rejected'} %>
-                      <%= f.submit 'Reject', class: 'btn btn-info' %>
-                    <% end %>
-                  </div>
-                <% else %>
-                  <h5 class='booking-tag'><%= booking.status %></h5>
-                <% end %>
+        <% if booking.date < Date.today %>
+          <div class="col-sm-6">
+            <div class="card my-3 pt-2 pb-1 no-effect-card" style= "background-image: url(<%= asset_path("dynamic-style.png")%>);">
+              <div class="card-body">
+                <h4 class="card-title"><%= booking.offer.name.capitalize %></h4>
+                <p class="card-text">Booked for: <%= booking.date %></p>
+                <div class="d-flex justify-content-between">
+                  <p class="card-text"><%= booking.offer.price %> ¥</p>
+                  <% if booking.pending? %>
+                    <div class="d-flex">
+                      <%= simple_form_for booking do |f| %>
+                        <%= f.input :status, as: :hidden, input_html: { value: 'confirmed'} %>
+                        <%= f.submit 'Accept', class: 'btn btn-info' %>
+                      <% end %>
+                      <%= simple_form_for booking do |f| %>
+                        <%= f.input :status, as: :hidden, input_html: { value: 'rejected'} %>
+                        <%= f.submit 'Reject', class: 'btn btn-info' %>
+                      <% end %>
+                    </div>
+                  <% else %>
+                    <h5 class='booking-tag'><%= booking.status %></h5>
+                  <% end %>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
     </div>
   <% else %>
