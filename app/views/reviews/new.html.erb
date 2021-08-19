@@ -1,0 +1,9 @@
+<div class="box">
+  <h3>Give this offer a review!</h3>
+  <p>Help us improve our services</p>
+  <%= simple_form_for @offer do |f|%>
+    <%= f.input :starts %>
+    <%= f.input :content, as: :text %>
+    <%= f.submit "submit your review", class:"btn btn-primary px-5", style: "border-radius: 20px; margin-left: 35%;" %>
+  <% end %>
+</div>
