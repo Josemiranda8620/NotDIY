@@ -4,7 +4,6 @@
   position: relative;
   margin: 10px;
   line-height: normal;
-
   h4 {
     font-weight: bold;
     text-decoration: underline;
@@ -14,7 +13,6 @@
   p {
     color:rgb(82, 82, 82);
   }
-
 }
 
 
@@ -23,13 +21,10 @@
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   position: relative;
   margin: 10px;
-
-
   &:hover {
     margin: -1px;
     transition: 0.5s;
   }
-
   h4 {
     font-weight: bold;
     text-decoration: underline;
@@ -39,5 +34,30 @@
   p {
     color:grey;
   }
+}
 
+
+
+.movable {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.price {
+  position: absolute;
+  bottom: 10px;
+  left: 30px;
+}
+
+.effect-card-booking {
+  height: 300px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.effect-card  .offer-avatar {
+  position: absolute;
+  top: 5px;
+  right: 5px;
 }
