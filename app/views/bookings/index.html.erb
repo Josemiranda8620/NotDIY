@@ -7,18 +7,18 @@
       <a class="tab-underlined" id="profile-tab" data-toggle="tab" href="#services" role="tab" aria-controls="profile" aria-selected="false">Services</a>
     </li>
     <li class="nav-item" role="presentation">
-      <a class="tab-underlined" id="converstion-tab" data-toggle="tab" href="#My_booked_services" role="tab" aria-controls="converstion" aria-selected="false">My booked services</a>
+      <a class="tab-underlined" id="converstion-tab" data-toggle="tab" href="#My_booked_services" role="tab" aria-controls="converstion" aria-selected="false">Upcoming bookings</a>
     </li>
   </ul>
   <div class="tab-content" id="myTabContent">
-    <div class="tab-pane fade py-3 show active" id="bookings" role="tabpanel" aria-labelledby="home-tab">
+    <div class="tab-pane fade py-3 show <%= @tab == "bookings" ? "active" : "" %>" id="bookings" role="tabpanel" aria-labelledby="home-tab">
       <%= render "bookings/index_user" %>
     </div>
-    <div class="tab-pane fade py-3" id="services" role="tabpanel" aria-labelledby="profile-tab">
+    <div class="tab-pane fade py-3 <%= @tab == "services" ? "active" : "" %>" id="services" role="tabpanel" aria-labelledby="profile-tab">
       <%= render "bookings/index_my_services" %>
     </div>
-    <div class="tab-pane fade py-3" id="My_booked_services" role="tabpanel" aria-labelledby="converstion-tab">
-    <%= render "bookings/index_provider" %>
+    <div class="tab-pane fade py-3 <%= @tab == "My_booked_services" ? "active" : "" %>" id="My_booked_services" role="tabpanel" aria-labelledby="converstion-tab">
+      <%= render "bookings/index_provider" %>
     </div>
   </div>
 </div>
