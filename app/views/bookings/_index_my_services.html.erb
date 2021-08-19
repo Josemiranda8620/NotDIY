@@ -1,12 +1,10 @@
-
-
 <div class="container">
   <% if @offers.count > 0 %>
     <h1 class="centered my-3 p-2">My Services</h1>
     <div class="row">
       <% @offers.each do |offer| %>
         <div class="col-sm-6">
-          <div class="card pt-2 pb-1 dimensions">
+          <div class="card my-3 pt-2 pb-1 no-effect-card" style= "background-image: url(<%= asset_path("dynamic-style.png")%>);">
             <div class="card-body">
               <h4 class="card-title"><%= offer.name.capitalize %></h4>
               <p class="card-text"><%= offer.detail %></p>
@@ -20,6 +18,6 @@
       <% end %>
     </div>
   <% else %>
-    <h2 class="centered my-3 p-2 mb-4">You have no services</h2>  
- <% end %>   
+    <h2 class="centered my-3 p-2 mb-4">You have no services</h2>
+  <% end %>
 </div>

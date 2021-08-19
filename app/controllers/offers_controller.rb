@@ -23,7 +23,6 @@ class OffersController < ApplicationController
     if @offer.save
       redirect_to offer_path(@offer)
     else
-      raise
       render :new
     end
   end
@@ -34,4 +33,3 @@ class OffersController < ApplicationController
     params.require(:offer).permit(:name, :detail, :price, :user_id)
   end
 end
-
