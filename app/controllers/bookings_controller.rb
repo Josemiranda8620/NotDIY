@@ -2,6 +2,7 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = policy_scope(Booking)
+    @owner_bookings = current_user.bookings_as_owner
     @offers = policy_scope(Offer).where(user: current_user)
   end
 
