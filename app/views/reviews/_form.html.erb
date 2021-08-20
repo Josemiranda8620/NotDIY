@@ -1,13 +1,9 @@
 <div class="box p-3 centered" style= "background-image: url(<%= asset_path("dynamic-style.png")%>);">
-  <% if @previous_booking && @previous_booking.date >= Date.today %>
-    <h3>Set up a review for this offer</h3>
-    <p>Help up improve our services</p>
-    <%= simple_form_for @review do |f|%>
-      <%= f.input :stars %>
-      <%= f.input :content, as: :text %>
-      <%= f.submit "CREATE", class:"btn btn-warning px-5", style: "border-radius: 20px; margin-left: 35%;" %>
-    <% end %>
-  <% else %>
-    <h3>Feel free to post a review after experiencing this offer</h3>
+  <h3>Set up a review for this offer</h3>
+  <p>Help up improve our services</p>
+  <%= simple_form_for [@offer, @review] do |f|%>
+    <%= f.input :stars %>
+    <%= f.input :content, as: :text %>
+    <%= f.submit "Create", class:"btn btn-warning px-5", style: "border-radius: 20px;" %>
   <% end %>
 </div>
