@@ -15,16 +15,17 @@
         </div>
       </div>
 
-
-      <i class="fa fa-bell"></i>
-      <i class="f7-icons"></i>
-      <i class="fa fa-bell"></i>
+      <%# <% @offer.reviews.stars.to_i.times do  %>
+        <%# <span class="glyphicon glyphicon-star"></span> %>
+      <%# <% end %>
 
       <% @offer.reviews.each do |review| %>
         <h5><%= review.content %></h5>
-        <i class="f7-icons"><%= 4 %></i>
-        <h5><%= review.stars %></h5>
+        <% (review.stars).times do%>
+          <i class="fa fa-star" aria-hidden="true"></i>
+        <%end%>
       <% end %>
+
     </div>
   </div>
   <div class="col col-4" >
