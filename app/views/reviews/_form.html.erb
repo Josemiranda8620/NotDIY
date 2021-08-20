@@ -2,8 +2,12 @@
   <h3>Set up a review for this offer</h3>
   <p>Help up improve our services</p>
   <%= simple_form_for [@offer, @review] do |f|%>
-    <%= f.input :stars %>
-    <%= f.input :content, as: :text %>
-    <%= f.submit "Create", class:"btn btn-warning px-5", style: "border-radius: 20px;" %>
-  <% end %>
+    <div class="star-rating">
+  <% 5.times do |i| %>
+    <input type="radio" name="review[stars]" value="<%= i + 1 %>" <%= "checked" if i == 2 %> class="mb-5"/>
+<% end %>
+</div>
+<%= f.input :content, as: :text %>
+<%= f.submit "Create", class:"btn btn-warning px-5", style: "border-radius: 20px;" %>
+<% end %>
 </div>
