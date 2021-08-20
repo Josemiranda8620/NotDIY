@@ -1,5 +1,9 @@
-<%= simple_form_for [@offer, @booking] do |f| %>
-  <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
-  <%= f.input :reason %>
-  <%= f.submit 'Book now', class: 'btn btn-warning my-3 px-3', style: 'border-radius: 20px' %>
-<% end %>
+<div class="box p-3 centered" style= "background-image: url(<%= asset_path("dynamic-style.png")%>);">
+  <h3>Book this service</h3>
+  <p>Free yourself from this disturbance</p>
+  <%= simple_form_for [@offer, @booking] do |f| %>
+    <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
+    <%= f.input :reason, as: :text %>
+    <%= f.submit 'Book now', class: 'btn btn-warning my-3 px-5', style: "border-radius: 20px;" %>
+  <% end %>
+</div>
