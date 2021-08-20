@@ -1,0 +1,32 @@
+<div class="col col-sm-6">
+  <div class="card-trip mb-4 ml-4">
+    <%= link_to offer_path(offer), class: "card-link" do %>
+      <% if offer.photo.attached? %>
+        <%= cl_image_tag offer.photo.key, class: "main-image"%>
+      <% else %>
+        <%= image_tag 'camera-photo.png', class: 'main-image' %>
+      <% end %>
+        <div class="card-trip-infos">
+          <div>
+            <h2 class="card-title"><%= offer.name.capitalize %></h2>
+            <p class="card-text"><%= offer.detail %></p>
+          </div>
+          <div class="d-flex justify-content-between align-items-center mt-2">
+          <div class="d-flex align-items-center">
+          <% if offer.user.photo.attached? %>
+            <%= cl_image_tag offer.user.photo.key, class: "avatar mr-2" %>
+          <% else %>
+            <span class="mr-2">
+            <%= image_tag 'camera-photo.png', class: "avatar-icon" %>
+            </span>
+          <% end %>
+            <h2 class="card-title"><%= offer.user.first_name.capitalize %></h2>
+          </div>
+            <div class="card-trip-pricing">
+              <h2><%= number_with_delimiter(offer.price, delimiter: ',') %>¥</h2>
+            </div>
+          </div>
+        </div>
+    <% end %>
+  </div>
+</div>
