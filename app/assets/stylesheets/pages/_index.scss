@@ -1,8 +1,10 @@
 // Import page-specific CSS files here.
 @import "home";
+@import "booking";
+@import "service";
 
 body {
-  background-color: rgba(185, 141, 86, 0.2);
+  // background-color: rgba(185, 141, 86, 0.2);
   height: 100%;
 }
 

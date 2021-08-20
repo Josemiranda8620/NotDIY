@@ -3,7 +3,7 @@
     <h1 class="centered my-3 p-2">Upcoming services</h1>
     <div class="row">
       <% @bookings.each do |booking| %>
-        <% if booking.date >= Date.today %>
+        <% if booking.date >= Date.today && booking.offer.user == current_user %>
           <div class="col-sm-6">
             <div class="card my-3 pt-2 pb-1 no-effect-card" style= "background-image: url(<%= asset_path("dynamic-style.png")%>);">
               <div class="card-body">
