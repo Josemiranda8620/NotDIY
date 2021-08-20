@@ -8,7 +8,7 @@
         <div class="card-body" style= "background-image: url(<%= asset_path("dynamic-style.png")%>);">
           <h5 class="card-title mt-4 mb-3"><strong>DETAILS</strong></h5>
           <p class="card-text"><%= @offer.detail %></p>
-          <h4 class="card-text mb-4">Price: <%= @offer.price %>¥</h4>
+          <h4 class="mb-4">Price: <%= number_with_delimiter(@offer.price, delimiter: ',') %>¥</h4>
           <div>
             <h5 class="mt-4"><strong><u>OUR REVIEWS</u></strong></h5>
             <%# <h5>Stars: <%= @offer.reviews.stars.sum/@offer.reviews.count %> </h5>

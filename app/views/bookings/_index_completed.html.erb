@@ -10,7 +10,7 @@
                 <h4 class="card-title"><%= booking.offer.name.capitalize %></h4>
                 <p class="card-text">Booked for: <%= booking.date %></p>
                 <div class="d-flex justify-content-between">
-                  <p class="card-text"><%= booking.offer.price %> ¥</p>
+                  <p><%= number_with_delimiter(booking.offer.price, delimiter: ',') %>¥</p>
                 </div>
               </div>
             </div>

@@ -22,7 +22,7 @@
           <h2 class="card-title"><%= offer.user.first_name.capitalize %></h2>
         </div>
           <div class="card-trip-pricing">
-            <h2><%= offer.price %>¥</h2>
+            <h2><%= number_with_delimiter(offer.price, delimiter: ',') %>¥</h2>
           </div>
         </div>
       </div>

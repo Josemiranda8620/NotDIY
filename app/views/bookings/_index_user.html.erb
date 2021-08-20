@@ -10,7 +10,7 @@
               <p class="card-text">Date: <%= booking.date %></p>
               <p class="card-text"><%= booking.offer.detail %></p>
               <div class="d-flex justify-content-between">
-                <p class="card-text"><%= booking.offer.price %> ¥</p>
+                <p><%= number_with_delimiter(booking.offer.price, delimiter: ',') %>¥</p>
                 <h5>Status: <%= booking.status %></h5>
               </div>
             </div>
