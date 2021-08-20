@@ -3,18 +3,7 @@
     <h1 class="centered my-3 p-2">My Services</h1>
     <div class="row">
       <% @offers.each do |offer| %>
-        <div class="col-sm-6">
-          <div class="card my-3 pt-2 pb-1 no-effect-card" style= "background-image: url(<%= asset_path("dynamic-style.png")%>);">
-            <div class="card-body">
-              <h4 class="card-title"><%= offer.name.capitalize %></h4>
-              <p class="card-text"><%= offer.detail %></p>
-              <p class="card-text">Has been booked <%= offer.bookings.count %> times</p>
-              <%# <div class=""> %>
-              <h5 class="card-text price"><%= offer.price %>¥</h5>
-              <%# </div> %>
-            </div>
-          </div>
-        </div>
+       <%= render 'offers_card', offer: offer %>
       <% end %>
     </div>
   <% else %>
