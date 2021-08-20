@@ -19,12 +19,14 @@ require("channels")
 
 // External imports
 import "bootstrap";
-import { initFlatpickr } from "../plugins/flatpickr";
 
 // Internal imports, e.g:
+import { initFlatpickr } from "../plugins/flatpickr";
+import {scrollEffect } from "../components/scroll";
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
   initFlatpickr();
+  scrollEffect();
   // Call your functions here, e.g:
 });

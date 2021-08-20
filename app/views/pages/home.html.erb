@@ -1,9 +1,12 @@
 <div class="home-background">
 <div class="container">
   <div class="home-content">
-  <h1>Stressed out about something?</h1>
-  <p>Find someone else to do it for you!</p>
-  <%= link_to "Click Now!", offers_path, class:"btn btn-warning home-button" %>
+  <h1>Let <span class="logo-text">NotDIY</span> take care of you!</h1>
+  <p>Find someone else to relay those messages on behalf of you</p>
+   <%= form_tag offers_path, method: :get, class: "form-inline" do %>
+    <%= text_field_tag :query, params[:query], class: "search-form", placeholder: "  search offers now"%>
+    <i class="fas fa-search search-icon"></i>
+  <% end %>
   </div>
 </div>
 </div>
