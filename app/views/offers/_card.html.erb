@@ -1,6 +1,10 @@
 <div class="card-trip mb-4">
   <%= link_to offer_path(offer), class: "card-link" do %>
-    <%= cl_image_tag offer.photo.key, class: "main-image"%>
+    <% if offer.photo.attached? %>
+      <%= cl_image_tag offer.photo.key, class: "main-image"%>
+    <% else %>
+      <%= image_tag 'camera-photo.png', class: 'main-image' %>
+    <% end %>
       <div class="card-trip-infos">
         <div>
           <h2 class="card-title"><%= offer.name.capitalize %></h2>
@@ -11,8 +15,8 @@
         <% if offer.user.photo.attached? %>
           <%= cl_image_tag offer.user.photo.key, class: "avatar mr-2" %>
         <% else %>
-          <span class="avatar mr-2">
-          <%= image_tag 'camera-photo.png' %>
+          <span class="mr-2">
+          <%= image_tag 'camera-photo.png', class: "avatar-icon" %>
           </span>
         <% end %>
           <h2 class="card-title"><%= offer.user.first_name.capitalize %></h2>

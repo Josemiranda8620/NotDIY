@@ -1,6 +1,7 @@
 .instructions {
   border-bottom:1px solid rgba(0, 0, 0, 0.1);
   height: 100vh;
+  position: relative;
 }
 
 .instruction-container {
@@ -8,7 +9,7 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 2em;
   padding: 24px 12px;
-  // margin-top: 3em;
+  margin-top: 3em;
   height: 50%;
   p {
     font-size: 24px;
@@ -30,4 +31,13 @@
 .offer-container {
   height: 80vh;
   margin-top: 1em;
+}
+
+.down-arrow-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.position-of-down {
+  text-align: center;
 }
