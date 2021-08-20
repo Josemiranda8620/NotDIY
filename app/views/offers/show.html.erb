@@ -9,11 +9,24 @@
           <h5 class="card-title mt-4 mb-3"><strong>DETAILS</strong></h5>
           <p class="card-text"><%= @offer.detail %></p>
           <h4 class="card-text mb-4">Price: <%= @offer.price %>¥</h4>
-          <div class="d-flex">
-            <h5>Our reviews</h5>
+          <div>
+            <h5 class="mt-4"><strong><u>OUR REVIEWS</u></strong></h5>
             <%# <h5>Stars: <%= @offer.reviews.stars.sum/@offer.reviews.count %> </h5>
+            <% @offer.reviews.each do |review| %>
+              <h5 class="mt-4 mb-2"><%= review.content %></h5>
+              <% (review.stars).times do%>
+                <i class="fa fa-star mb-4" aria-hidden="true"></i>
+              <%end%>
+            <% end %>
         </div>
       </div>
+
+      <%# <% @offer.reviews.stars.to_i.times do  %>
+        <%# <span class="glyphicon glyphicon-star"></span> %>
+      <%# <% end %>
+
+
+
     </div>
   </div>
   <div class="col col-4" >
