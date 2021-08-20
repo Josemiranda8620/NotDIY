@@ -1,5 +1,6 @@
 <div class="card-trip mb-4">
   <%= link_to offer_path(offer), class: "card-link" do %>
+
     <% if offer.photo.attached? %>
       <%= cl_image_tag offer.photo.key, class: "main-image"%>
     <% else %>
@@ -21,10 +22,10 @@
         <% end %>
           <h2 class="card-title"><%= offer.user.first_name.capitalize %></h2>
         </div>
-          <div class="card-trip-pricing">
-            <h2><%= offer.price %>¥</h2>
-          </div>
+        <div class="card-trip-pricing">
+          <h2><%= offer.price %>¥</h2>
         </div>
       </div>
+    </div>
   <% end %>
 </div>
