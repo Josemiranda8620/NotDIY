@@ -1,13 +1,15 @@
 class ReviewsController < ApplicationController
 
   def create
+    @offer = Offer.find(params[:offer_id])
     @review = Review.new(secure_params)
-    @review.offer = Offer.find(:offer_id)
+    @review.offer = @offer
     authorize @review
     if @review.save
-      redirect_to offers_path
+      redirect_to offer_path(@offer)
     else
-      render :new
+      @booking = Booking.new
+      render "offers/show"
     end
   end
 
