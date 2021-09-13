@@ -16,7 +16,7 @@
             <%= cl_image_tag offer.user.photo.key, class: "avatar mr-2" %>
           <% else %>
             <span class="mr-2">
-            <%= image_tag 'camera-photo.png', class: "avatar-icon" %>
+              <%= image_tag 'camera-photo.png', class: "avatar-icon" %>
             </span>
           <% end %>
           <h2 class="card-title"><%= offer.user.first_name.capitalize %></h2>

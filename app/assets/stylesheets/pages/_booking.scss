@@ -1,16 +1,14 @@
 .instructions {
   border-bottom:1px solid rgba(0, 0, 0, 0.1);
-  height: 100vh;
-  position: relative;
+
 }
 
 .instruction-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  height: fit-content;
   grid-gap: 2em;
   padding: 24px 12px;
   margin-top: 3em;
-  height: 50%;
   p {
     font-size: 24px;
     padding: 0px 12px;
@@ -22,15 +20,21 @@
   }
 }
 
+.offer-container-h1{
+  text-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  text-align:center;
+}
 .instruction-container-text {
+  height: 56vh;
+  margin-bottom: 10px;
   text-align: center;
   border:1px solid rgba(0, 0, 0, 0.2);
   border-radius: 10px;
 }
 
 .offer-container {
-  height: 80vh;
   margin-top: 1em;
+  height: fit-content;
 }
 
 .down-arrow-icon {
