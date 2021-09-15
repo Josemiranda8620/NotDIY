@@ -2,21 +2,21 @@ require "open-uri"
 
 # Create Users
 
-# User.destroy_all
-# puts "Users destroyed"
+User.destroy_all
+puts "Users destroyed"
 
-# 15.times do
-#   file = URI.open('https://thispersondoesnotexist.com/image')
-#   user = User.create!(
-  #     email: Faker::Internet.safe_email,
-  #     password: '123123',
-  #     first_name: Faker::Name.first_name,
-  #     last_name: Faker::Name.last_name
-  #   )
-  #   user.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
-  # end
+15.times do
+  file = URI.open('https://thispersondoesnotexist.com/image')
+  user = User.create!(
+      email: Faker::Internet.safe_email,
+      password: '123123',
+      first_name: Faker::Name.first_name,
+      last_name: Faker::Name.last_name
+    )
+    user.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
+  end
 
-  # puts "Created #{User.count} accounts, last user id is #{User.last.id}"
+  puts "Created #{User.count} accounts, last user id is #{User.last.id}"
 
 
   # =========================================================================
@@ -53,7 +53,7 @@ require "open-uri"
     "Will definitly book again!" => 4,
     "Couldn't have asked for more. The process was so seamless and I didn't have to worry about a thing!" => 5,
     "It was a terrible experience, I ended up doing everything on my own" => 1,
-    "Had to ask for a refund since the person never responded" =>2,
+    "Had to ask for a refund since the person never responded" => 2,
     "This person deserves a 5 star for sure. Loved the customer experience" => 5,
     "It was alright, not sure if I would do book this service again though" => 2,
     "The job was done so not much to complain about. A little pricey though" => 3
@@ -75,7 +75,7 @@ require "open-uri"
       name: key_array.sample,
       detail: value_array.sample,
       price: price_array.sample,
-      user_id: rand(User.last.id-10..User.last.id),
+      user_id: rand(User.last.id - 10..User.last.id)
       })
       offer.photo.attach(io: file, filename: 'offer.png', content_type: 'image/png')
 

@@ -95,7 +95,7 @@
   .card{
     grid-template-columns: 1fr 1fr;
   }
-        .container-offers{
+  .container-offers{
     grid-template-columns: 1fr 1fr;
   }
 }
@@ -103,7 +103,7 @@
 
 @media (max-width: 500px) {
   .cards {grid-template-columns: 1fr;}
-    .card{
+  .card{
     grid-template-columns: 1fr;
   }
   .container-offers{
