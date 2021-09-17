@@ -6,7 +6,6 @@
       <% end %>
       <%= form_tag offers_path, method: :get, class: "form-inline" do %>
         <%= text_field_tag :query, params[:query], class: "nav-search-form", placeholder: "  search"%>
-        <i class="fas fa-search nav-search-icon"></i>
       <% end %>
       <% if user_signed_in? %>
         <li class="nav-item">
